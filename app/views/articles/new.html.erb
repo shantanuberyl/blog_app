@@ -1,0 +1,15 @@
+<h1>Create an article</h1>
+
+<%= form_for @article do |nArt| %>
+  <p>
+    <%= nArt.label :title %>
+    <%= nArt.text_field :title %>
+  </p>
+  <p>
+    <%= nArt.label :description %>
+    <%= nArt.text_area :description %>
+  </p>
+  <p>
+    <%= nArt.submit %>
+  </p>
+<% end %>
