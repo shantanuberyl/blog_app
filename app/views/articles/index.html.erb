@@ -27,6 +27,9 @@
     <td>
       <%= link_to 'Show', article_path(allArticle) %>
     </td>
+    <td>
+      <%= link_to 'Delete', article_path(allArticle), method: :delete, data: { confirm: "are you sure you want to delete this blog?" } %>
+    </td>
   </tr>
   <% end %>
 </table>
