@@ -1,2 +1,65 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+body {
+  font-family: 'Baloo Paaji', cursive;
+  padding-top: 50px;
+}
+
+.navbar.blog {
+  background-color: #085b68;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar {
+  margin-bottom: 0px;
+  border-radius: 0px;
+  border: 0px;
+}
+
+.navbar.blog a, .navbar.blog a:hover, .navbar.blog a:focus,
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: white;
+}
+
+.navbar-brand {
+  font-size: 26px;
+}
+
+.jumbotron {
+  background-image: url("jumbo.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding-top: 120px;
+  padding-bottom: 100px;
+}
+
+.jumbotron h1 {
+  font-size: 80px;
+  letter-spacing: 4px;
+}
+
+.btn-sign {
+  background-color: #085b68;
+  border: none;
+}
+
+.btn-sign:hover, .btn-sign:active, .btn-sign:hover:active {
+  background-color: #043942;
+}
+
+footer {
+  background-color: #021c2d;
+  margin-top: 50px;
+}
+
+footer p {
+  padding: 20px 0px 10px 0px;
+  color: white;
+}
+
+.para {
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
