@@ -1,24 +1,20 @@
-<% if @article.errors.any? %>
-<h4>Errors</h4>
-  <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li>
-        <%= msg %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
 
-<%= form_for @article do |nArt| %>
-<p>
-  <%= nArt.label :title %>
-  <%= nArt.text_field :title %>
-</p>
-<p>
-  <%= nArt.label :description %>
-  <%= nArt.text_area :description %>
-</p>
-<p>
-  <%= nArt.submit %>
-</p>
-<% end %>
+<%= render 'shared/errors', obj: @article %>
+
+<div class="container">
+  <div class="col-md-8 col-md-offset-2">
+    <%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |nArt| %>
+    <div class="form-group">
+          <%= nArt.label :title, class: "control-label" %>
+          <%= nArt.text_field :title, class: "form-control", placeholder: "Title Of Article" %>
+    </div>
+    <div class="form-group">
+      <%= nArt.label :description, class: "control-label" %>
+      <%= nArt.text_area :description, class: "form-control", placeholder: "Description Of Article", rows: 10 %>
+    </div>
+    <div class="form-group">
+      <%= nArt.submit class: "btn-lg sBtn" %>
+    </div>
+    <% end %>
+  </div>
+</div>
