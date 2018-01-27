@@ -1,12 +1,24 @@
-<h1>showing article </h1>
-
-<div>
-  <p>
-    Title = <%= @article.title %>
-  </p>
-  <p>
-    Description = <%= @article.description %>
-  </p>
-  <%= link_to 'back to articles', articles_path %>
-  <%= link_to 'edit', edit_article_path(@article) %>
+<div class="show">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="showtitle">
+        <h1 class="text-center">
+          <%= @article.title %>
+        </h1>
+      </div>
+      <div class="showdescription text-center">
+        <p>
+          <h4>
+            Description :
+          </h4>
+          <%= simple_format(@article.description) %>
+        </p>
+      </div>
+      <div class="impoLink">
+        <%= link_to 'back to articles', articles_path, class: "btn btn-success" %>
+        <%= link_to 'edit', edit_article_path(@article), class: "btn btn-primary" %>
+        <%= link_to 'Delete', article_path(@article), class: "btn btn-danger", method: :delete, data: { confirm: "You want to delete?" } %>
+      </div>
+    </div>
+  </div>
 </div>
