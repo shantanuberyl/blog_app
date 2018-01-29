@@ -14,7 +14,7 @@
           <%= simple_format(@article.description) %>
         </p>
       </div>
-      <div class="impoLink">
+      <div class="impoLink text-center">
         <%= link_to 'back to articles', articles_path, class: "btn btn-success" %>
         <%= link_to 'edit', edit_article_path(@article), class: "btn btn-primary" %>
         <%= link_to 'Delete', article_path(@article), class: "btn btn-danger", method: :delete, data: { confirm: "You want to delete?" } %>

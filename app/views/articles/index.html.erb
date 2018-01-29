@@ -1,35 +1,21 @@
-<h1> Listing All Articles </h1>
-
-<p>
-  <%= link_to 'Click here to create new article', new_article_path %>
-</p>
-
-<table>
-  <tr>
-    <th>
-      Title
-    </th>
-    <th>
-      Description
-    </th>
-  </tr>
-  <% @articles.each do |allArticle| %>
-  <tr>
-    <td>
-      <%= allArticle.title %>
-    </td>
-    <td>
-      <%= allArticle.description %>
-    </td>
-    <td>
-      <%= link_to 'Edit', edit_article_path(allArticle) %>
-    </td>
-    <td>
-      <%= link_to 'Show', article_path(allArticle) %>
-    </td>
-    <td>
-      <%= link_to 'Delete', article_path(allArticle), method: :delete, data: { confirm: "are you sure you want to delete this blog?" } %>
-    </td>
-  </tr>
-  <% end %>
-</table>
+<div class="container">
+  <div class="heading text-center">
+    <h1> Listing All Articles </h1>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <% @articles.each do |allArticle| %>
+      <div class="well well-lg">
+        <div class="article_title">
+          <%= link_to allArticle.title, article_path(allArticle) %>
+        </div>
+        <div class="article_description">
+          <%= truncate(allArticle.description, length: 100) %>
+        </div>
+        <div class="impoLink">
+          <%= link_to 'edit', edit_article_path(allArticle), class: "btn btn-primary" %>
+          <%= link_to 'Delete', article_path(allArticle), class: "btn btn-danger", method: :delete, data: { confirm: "You want to delete?" } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
