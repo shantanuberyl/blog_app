@@ -1,0 +1,23 @@
+<%= render 'shared/errors', obj: @user %>
+
+<div class="container">
+  <div class="col-md-8 col-md-offset-2">
+    <%= form_for(@user, :html => {class: "form-horizontal", role: "form"}) do |nArt| %>
+    <div class="form-group">
+          <%= nArt.label :username, class: "control-label" %>
+          <%= nArt.text_field :username, class: "form-control", placeholder: "Enter Username" %>
+    </div>
+    <div class="form-group">
+      <%= nArt.label :email, class: "control-label" %>
+      <%= nArt.email_field :email, class: "form-control", placeholder: "Enter email id" %>
+    </div>
+    <div class="form-group">
+      <%= nArt.label :password, class: "control-label" %>
+      <%= nArt.password_field :password, class: "form-control", placeholder: "Enter password" %>
+    </div>
+    <div class="form-group">
+      <%= nArt.submit(@user.new_record? ? "Sign Up" : "Update Account", class: "btn-lg sBtn") %>
+    </div>
+    <% end %>
+  </div>
+</div>
