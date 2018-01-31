@@ -1,23 +1,30 @@
-<div class="show">
-  <div class="container">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="showtitle">
-        <h1 class="text-center">
-          <%= @article.title %>
-        </h1>
+<div class="container">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="showtitle">
+      <h1 class="text-center">
+        Title: <%= @article.title %>
+      </h1>
+    </div>
+    <div class="well well-lg">
+      <div class="showdescription">
+        <h4>
+          Description :
+        </h4>
+        <div class="text-center">
+          <p>
+            <%= simple_format(@article.description) %>
+          </p>
+        </div>
       </div>
-      <div class="showdescription text-center">
-        <p>
-          <h4>
-            Description :
-          </h4>
-          <%= simple_format(@article.description) %>
-        </p>
-      </div>
-      <div class="impoLink text-center">
-        <%= link_to 'back to articles', articles_path, class: "btn btn-success" %>
-        <%= link_to 'edit', edit_article_path(@article), class: "btn btn-primary" %>
-        <%= link_to 'Delete', article_path(@article), class: "btn btn-danger", method: :delete, data: { confirm: "You want to delete?" } %>
+      <div class="impoLink">
+        <%= link_to 'back to articles', articles_path, class: "btn btn-success btn-xs" %>
+        <%= link_to 'edit', edit_article_path(@article), class: "btn btn-primary btn-xs" %>
+        <%= link_to 'Delete', article_path(@article), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: "You want to delete?" } %>
+        <span class="text-right">
+          <p>
+            Created By: <%= link_to @article.eachUser.username, user_path(@article.eachUser) %>
+          </p>
+        </span>
       </div>
     </div>
   </div>
