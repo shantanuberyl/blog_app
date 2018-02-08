@@ -22,7 +22,7 @@
         <%= link_to 'Delete', article_path(@article), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: "You want to delete?" } %>
         <span class="text-right">
           <p>
-            Created By: <%= link_to @article.eachUser.username, user_path(@article.eachUser) %>
+            Created By: <%= link_to @article.user.username, user_path(@article.user) %>
           </p>
         </span>
       </div>

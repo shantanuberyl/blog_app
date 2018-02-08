@@ -1,18 +1,19 @@
 <div class="container text-center">
   <h1>All Users</h1>
   <div class="col-md-4 col-md-offset-4">
-    <% @users.each do |eachUser| %>
+    <% @users.each do |user| %>
       <div class="well well-lg">
         <div>
-          <%= link_to gravatar_for(eachUser), user_path(eachUser) %>
+          <%= link_to gravatar_for(user), user_path(user) %>
         </div>
         <div>
-          <%= link_to eachUser.username, user_path(eachUser) %>
+          <%= link_to user.username, user_path(user) %>
         </div>
         <div class="small">
-          <%= pluralize(eachUser.articles.count, "Article") if eachUser.articles %>
+          <%= pluralize(user.articles.count, "Article") if user.articles %>
         </div>
       </div>
     <% end %>
+    <%= will_paginate %>
   </div>
 </div>
